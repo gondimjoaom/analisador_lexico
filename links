@@ -1,0 +1,19 @@
+https://www.thecrazyprogrammer.com/2017/02/lexical-analyzer-in-c.html
+http://www.learntosolveit.com/python/algorithm_lexical_analyzer_1.html
+
+[0-9]+[a-z]+	{printf("erro em %d\n", sizeof(yytext)/sizeof(int)); yyless(sizeof(yytext)/sizeof(int));}
+[a-zA-Z_][a-zA-Z0-9]*	{printf("indentifier\n"); yyless(sizeof(yytext)/sizeof(int));}
+
+[0-9]+.[0-9]*	{printf("number %d\n", sizeof(yytext)/sizeof(int)); yyless(sizeof(yytext)/sizeof(int));}
+
+.	 {printf("%d\n", sizeof(yytext)/sizeof(int));yyless(sizeof(yytext)/sizeof(int));}
+\n	{return 0;}
+
+
+{DIGIT}*"."{2,} {
+	coluna = coluna + yyleng - 1;
+	//printf("aqui\n");
+	printf("%d %d\n", linha, coluna);
+	yyless(coluna);
+	coluna++;
+}

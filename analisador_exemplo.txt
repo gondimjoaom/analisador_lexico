@@ -1,0 +1,18 @@
+/*
+COMENTARIO
+MULTIPLAS
+LINHAS
+*/
+
+primeiro_num = 1.0E12;
+primeiro_nome = "aldisio";
+a = 1 + 2;
+b = a + 1;
+b = b + 1;
+tamanho = to_i(a);
+//caregand uma imagem
+imagem = new("/home/aldisio/cc/compiladores/imagem.bmp");
+
+//fim do codigo
+acabou=true and false;
+$¬
